@@ -5,7 +5,7 @@ It demonstrates managing snacks, students, and orders with a clean UI, responsiv
 
 
 ⸻
-
+```
 🚀 Setup Instructions
 	1.	Clone the repository
 
@@ -21,7 +21,7 @@ npm run dev
 	4.	Open your browser and visit:
 
 http://localhost:3000
-
+```
 ⸻
 
 
