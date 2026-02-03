@@ -1,5 +1,5 @@
 export interface Snack {
-  id: number;
+  id: string;
   name: string;
   price: number;
   ordersCount: number;

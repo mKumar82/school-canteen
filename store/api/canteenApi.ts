@@ -30,7 +30,7 @@ export const canteenApi = createApi({
     }),
     placeOrder: builder.mutation<
       Order,
-      { snackId: number; studentId: string; quantity: number }
+      { snackId: string; studentId: string; quantity: number }
     >({
       query: (body) => ({
         url: "/orders",

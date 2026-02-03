@@ -3,7 +3,7 @@ import { snacks, students, orders } from "../_data";
 
 export async function POST(req: Request) {
   const body = await req.json();
-
+  console.log(body);
   const snack = snacks.find((s) => s.id === body.snackId);
   const student = students.find((s) => s.id === body.studentId);
 
@@ -21,9 +21,7 @@ export async function POST(req: Request) {
     amount,
   };
 
-
   snack.ordersCount += body.quantity;
-
 
   student.totalSpent += amount;
   student.orders.push(order);

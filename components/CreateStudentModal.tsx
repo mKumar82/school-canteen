@@ -11,7 +11,7 @@ interface Props {
 
 export default function CreateStudentModel({ onClose }: Props) {
   const { register, handleSubmit, formState } = useForm<{ name: string }>();
-  const [createStudent, { isLoading, isError }] = useCreateStudentMutation();
+  const [createStudent, { isLoading }] = useCreateStudentMutation();
 
   const onSubmit = async (data: { name: string }) => {
     try {

@@ -32,7 +32,7 @@ export default function StudentDetailPage({
   }
 
   return (
-    <div className="p-6 space-y-4">
+    <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-bold">{data?.name}</h1>
 

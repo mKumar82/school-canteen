@@ -26,7 +26,7 @@ export default function OrderModal({ snack, studentId, onClose }: Props) {
     studentId || "",
   );
 
-  const [selectedSnackId, setSelectedSnackId] = useState<number | null>(
+  const [selectedSnackId, setSelectedSnackId] = useState<string | null>(
     snack?.id || null,
   );
 
@@ -78,7 +78,7 @@ export default function OrderModal({ snack, studentId, onClose }: Props) {
           <select
             className="border p-2 w-full"
             value={selectedSnackId ?? ""}
-            onChange={(e) => setSelectedSnackId(Number(e.target.value))}
+            onChange={(e) => setSelectedSnackId(e.target.value)}
           >
             <option value="">Select Snack</option>
             {snacks?.map((sn) => (
