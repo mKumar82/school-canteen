@@ -2,10 +2,11 @@
 import { Order } from "@/types/order";
 import { Student } from "@/types/student";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
 export const canteenApi = createApi({
   reducerPath: "canteenApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/api" }),
+  baseQuery: fetchBaseQuery({ baseUrl: `${API_URL}/api` }),
   tagTypes: ["Snacks", "Students", "Orders"],
   endpoints: (builder) => ({
     getSnacks: builder.query<any[], void>({
