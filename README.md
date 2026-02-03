@@ -1,76 +1,46 @@
-# Frontend Assignment – School Canteen
-
-This project is a frontend prototype built using **Next.js, React, and Redux Toolkit**.  
-It demonstrates managing snacks, students, and orders with a clean UI, responsive layout, and proper state management.
-
-
-⸻
-```
+🍎 Frontend Assignment: School Canteen
+A high-performance frontend prototype for managing canteen operations, including snacks, students, and order processing. Built with Next.js, React, and Redux Toolkit, this project prioritizes a clean UI, responsive layout, and sophisticated state management.
 🚀 Setup Instructions
-	1.	Clone the repository
-
+Clone the repository
+bash
 git clone <repository-url>
 cd <project-folder>
+Use code with caution.
 
-    2.	Install dependencies
-
+Install dependencies
+bash
 npm install
-	3.	Run the development server
+Use code with caution.
 
+Run the development server
+bash
 npm run dev
-	4.	Open your browser and visit:
+Use code with caution.
 
-http://localhost:3000
-```
-⸻
-
-
-📦 Libraries Used
-	•	Next.js (16.1.6) – App Router, routing, API routes
-	•	React (19.2.3) – UI development
-	•	TypeScript – Type safety and maintainability
-	•	@reduxjs/toolkit (2.11.2) – State management and RTK Query
-	•	react-redux (9.2.0) – Redux bindings for React
-	•	react-hook-form (7.71.1) – Form handling and validation
-	•	react-hot-toast (2.6.0) – Toast notifications for success and error states
-	•	react-loading-indicators (1.0.1) – Loading spinners and loading states
-	•	Tailwind CSS – Styling and responsive UI
-
-
+Access the application
+Open http://localhost:3000 in your browser.
+📦 Tech Stack
+Category	Libraries
+Core	Next.js (App Router), React, TypeScript
+State Management	@reduxjs/toolkit (RTK Query), react-redux
+Form Handling	react-hook-form
+Feedback & UI	react-hot-toast, react-loading-indicators
+Styling	Tailwind CSS
 🧪 Mock Data Approach
-
-This project does not use an external backend.
-	•	Backend behavior is simulated using Next.js API routes
-	•	Data (students, snacks, and orders) is stored in memory
-	•	The following APIs are mocked:
-	•	GET /api/snacks
-	•	GET /api/students
-	•	GET /api/students/:id
-	•	POST /api/students
-	•	POST /api/orders
-	•	Artificial delays are added to simulate real network latency
-	•	RTK Query is used to manage loading, success, and error states
-
-
-⸻
-
+This project simulates a backend environment using Next.js API Routes to demonstrate full-stack integration:
+In-Memory Storage: Data for students, snacks, and orders is stored in server memory.
+Latency Simulation: Artificial delays are added to requests to showcase RTK Query loading, success, and error states.
+API Endpoints:
+GET /api/snacks | GET /api/students
+POST /api/students | POST /api/orders
 ⚠️ Important Note About Deployment
-
-This project uses in-memory mock data inside Next.js API routes.
-	•	In local development, the Node.js server remains active, so data behaves consistently.
-	•	In deployed environments (e.g., Vercel), API routes run as serverless functions.
-	•	Serverless functions are stateless, meaning in-memory data is not guaranteed to persist across requests.
-
-As a result:
-	•	Created students or orders may not persist reliably after deployment
-	•	This behavior is expected and does not indicate a frontend bug
-	•	A real backend/database would be required for full persistence in production
-
-⸻
-
-Live Demo
-
-The project is deployed on Vercel and accessible here:
+Because this project uses in-memory storage within Vercel Serverless Functions:
+Statelessness: Serverless functions do not persist memory between requests.
+Data Persistence: Created students or orders may reset or disappear after deployment.
+Context: This behavior is expected for a frontend prototype; a production environment would require a dedicated database like PostgreSQL or MongoDB.
+🔗 Live Demo
+The project is deployed and ready for preview:
+View School Canteen Live
 
 🔗 Live URL: https://school-canteen-omega.vercel.app/
 
