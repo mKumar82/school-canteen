@@ -7,6 +7,8 @@ import {
   usePlaceOrderMutation,
 } from "@/store/api/canteenApi";
 import { useState } from "react";
+import ActionButton from "./ActionButton";
+import toast from "react-hot-toast";
 
 interface Props {
   snack?: Snack;
@@ -18,7 +20,7 @@ export default function OrderModal({ snack, studentId, onClose }: Props) {
   const { data: students } = useGetStudentsQuery();
   const { data: snacks } = useGetSnacksQuery();
 
-  const [placeOrder, { isLoading, isError }] = usePlaceOrderMutation();
+  const [placeOrder, { isLoading }] = usePlaceOrderMutation();
 
   const [selectedStudentId, setSelectedStudentId] = useState<string>(
     studentId || "",
@@ -33,21 +35,28 @@ export default function OrderModal({ snack, studentId, onClose }: Props) {
   const handleSubmit = async () => {
     if (!selectedStudentId || !selectedSnackId) return;
 
-    await placeOrder({
-      studentId: selectedStudentId,
-      snackId: selectedSnackId,
-      quantity,
-    }).unwrap();
-
-    onClose();
+    try {
+      await placeOrder({
+        studentId: selectedStudentId,
+        snackId: selectedSnackId,
+        quantity,
+      }).unwrap();
+      toast.success("Order placed successfully");
+      onClose();
+    } catch (error) {
+      toast.error("Failed to place order");
+    }
   };
 
-  if (isLoading) return <p className="p-6">Creating order...</p>;
-  if (isError) return <p className="p-6">Failed to create</p>;
-
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
-      <div className="bg-white p-6 rounded w-80 space-y-4">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 bg-black/40 flex items-center justify-center"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white p-6 rounded w-1/2 lg:w-1/4 space-y-4"
+      >
         <h2 className="font-semibold">Order {snack?.name}</h2>
 
         {!studentId && (
@@ -89,17 +98,18 @@ export default function OrderModal({ snack, studentId, onClose }: Props) {
           className="border p-2 w-full"
         />
 
-        <button
-          onClick={handleSubmit}
-          disabled={!selectedStudentId || !selectedSnackId}
-          className="bg-green-600 text-white w-full py-2 rounded disabled:opacity-50"
-        >
-          Place Order
-        </button>
-
-        <button onClick={onClose} className="text-sm text-gray-500 w-full">
-          Cancel
-        </button>
+        <div className="flex justify-between gap-2">
+          <ActionButton style="flex-1" onClick={onClose} variant="secondary">
+            Cancel
+          </ActionButton>
+          <ActionButton
+            style="flex-1"
+            disabled={!selectedStudentId || !selectedSnackId || isLoading}
+            onClick={handleSubmit}
+          >
+            {isLoading ? "Placing Order..." : "Place Order"}
+          </ActionButton>
+        </div>
       </div>
     </div>
   );

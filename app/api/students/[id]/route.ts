@@ -1,4 +1,3 @@
-// src/app/api/students/[id]/route.ts
 import { delay } from "@/lib/delay";
 import { students } from "../../_data";
 

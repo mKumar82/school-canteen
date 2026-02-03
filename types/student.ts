@@ -1,5 +1,3 @@
-// src/types/student.ts
-
 import { Order } from "./order";
 
 

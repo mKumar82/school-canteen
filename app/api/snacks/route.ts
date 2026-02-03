@@ -1,4 +1,3 @@
-// src/app/api/snacks/route.ts
 import { delay } from "@/lib/delay";
 import { snacks } from "../_data";
 

@@ -1,4 +1,3 @@
-// store/api/canteenApi.ts
 import { Order } from "@/types/order";
 import { Student } from "@/types/student";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
