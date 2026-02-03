@@ -1,10 +1,30 @@
-# Frontend Assignment – School Canteen
 
-This project is a frontend prototype built using **Next.js, React, and Redux Toolkit**.  
+⸻
+
+Frontend Assignment – School Canteen
+
+This project is a frontend prototype built using Next.js, React, and Redux Toolkit.
 It demonstrates managing snacks, students, and orders with a clean UI, responsive layout, and proper state management.
 
+⸻
 
 
+🚀 Setup Instructions
+	1.	Clone the repository
+
+git clone <repository-url>
+cd <project-folder>
+	2.	Install dependencies
+
+npm install
+	3.	Run the development server
+
+npm run dev
+	4.	Open your browser and visit
+
+http://localhost:3000
+
+⸻
 
 
 📦 Libraries Used
@@ -18,6 +38,7 @@ It demonstrates managing snacks, students, and orders with a clean UI, responsiv
 	•	react-loading-indicators (1.0.1) – Loading spinners and loading states
 	•	Tailwind CSS – Styling and responsive UI
 
+⸻
 
 🧪 Mock Data Approach
 
@@ -33,15 +54,14 @@ This project does not use an external backend.
 	•	Artificial delays are added to simulate real network latency
 	•	RTK Query is used to manage loading, success, and error states
 
-
 ⸻
 
 ⚠️ Important Note About Deployment
 
 This project uses in-memory mock data inside Next.js API routes.
-	•	In local development, the Node.js server remains active, so data behaves consistently.
-	•	In deployed environments (e.g., Vercel), API routes run as serverless functions.
-	•	Serverless functions are stateless, meaning in-memory data is not guaranteed to persist across requests.
+	•	In local development, the Node.js server remains active, so data behaves consistently
+	•	In deployed environments (e.g., Vercel), API routes run as serverless functions
+	•	Serverless functions are stateless, meaning in-memory data is not guaranteed to persist across requests
 
 As a result:
 	•	Created students or orders may not persist reliably after deployment
@@ -50,10 +70,12 @@ As a result:
 
 ⸻
 
-Live Demo
+🌐 Live Demo
 
 The project is deployed on Vercel and accessible here:
 
 🔗 Live URL: https://school-canteen-omega.vercel.app/
 
 ⸻
+
+✅ Why this README looks professional
