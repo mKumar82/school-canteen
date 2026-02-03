@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Assignment – School Canteen
 
-## Getting Started
+This project is a frontend prototype built using **Next.js, React, and Redux Toolkit**.  
+It demonstrates managing snacks, students, and orders with a clean UI, responsive layout, and proper state management.
 
-First, run the development server:
+---
 
+## 🚀 Setup Instructions
+
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd <project-folder>
+
+2.	**Install dependencies**
+```bash
+npm install
+3.	**Run the development server**
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+4.	**Open your browser and visit:**
+```bash
+http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📦 Libraries Used
+	•	Next.js (16.1.6) – App Router, routing, API routes
+	•	React (19.2.3) – UI development
+	•	TypeScript – Type safety and maintainability
+	•	@reduxjs/toolkit (2.11.2) – State management and RTK Query
+	•	react-redux (9.2.0) – Redux bindings for React
+	•	react-hook-form (7.71.1) – Form handling and validation
+	•	react-hot-toast (2.6.0) – Toast notifications for success and error states
+	•	react-loading-indicators (1.0.1) – Loading spinners and loading states
+	•	Tailwind CSS – Styling and responsive UI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+🧪 Mock Data Approach
 
-To learn more about Next.js, take a look at the following resources:
+This project does not use an external backend.
+	•	Backend behavior is simulated using Next.js API routes
+	•	Data (students, snacks, and orders) is stored in memory
+	•	The following APIs are mocked:
+	•	GET /api/snacks
+	•	GET /api/students
+	•	GET /api/students/:id
+	•	POST /api/students
+	•	POST /api/orders
+	•	Artificial delays are added to simulate real network latency
+	•	RTK Query is used to manage loading, success, and error states
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+⸻
 
-## Deploy on Vercel
+⚠️ Important Note About Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project uses in-memory mock data inside Next.js API routes.
+	•	In local development, the Node.js server remains active, so data behaves consistently.
+	•	In deployed environments (e.g., Vercel), API routes run as serverless functions.
+	•	Serverless functions are stateless, meaning in-memory data is not guaranteed to persist across requests.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+As a result:
+	•	Created students or orders may not persist reliably after deployment
+	•	This behavior is expected and does not indicate a frontend bug
+	•	A real backend/database would be required for full persistence in production
+
+⸻
+
+Live Demo
+
+The project is deployed on Vercel and accessible here:
+
+🔗 Live URL: https://school-canteen-omega.vercel.app/
+
+⸻
