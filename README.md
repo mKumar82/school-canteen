@@ -3,26 +3,27 @@
 This project is a frontend prototype built using **Next.js, React, and Redux Toolkit**.  
 It demonstrates managing snacks, students, and orders with a clean UI, responsive layout, and proper state management.
 
----
 
-## 🚀 Setup Instructions
+⸻
 
-1. **Clone the repository**
-```bash
+🚀 Setup Instructions
+	1.	Clone the repository
+
 git clone <repository-url>
 cd <project-folder>
 
-2.	**Install dependencies**
-```bash
+    2.	Install dependencies
+
 npm install
-3.	**Run the development server**
-```bash
+	3.	Run the development server
+
 npm run dev
-4.	**Open your browser and visit:**
-```bash
+	4.	Open your browser and visit:
+
 http://localhost:3000
 
----
+⸻
+
 
 📦 Libraries Used
 	•	Next.js (16.1.6) – App Router, routing, API routes
